@@ -131,3 +131,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # RAZORPAY_KEY_SECRET = 'your_secret'
 TIME_ZONE = 'Asia/Kolkata'     # 👈 For Indian Standard Time (IST)
 USE_TZ = True     
+CSRF_TRUSTED_ORIGINS = [
+    "https://shiva-kunj-library.onrender.com"
+]
