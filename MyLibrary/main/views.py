@@ -106,7 +106,7 @@ def admin(request):
             login(request, user)
             request.session['user'] = username
             students = Booking.objects.all()
-            return render(request, 'main/admin.html', {'students': students})
+            return render(request, 'main/Admin.html', {'students': students})
         
             #same admin portal
         else:
