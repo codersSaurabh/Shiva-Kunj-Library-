@@ -93,7 +93,7 @@ def verify_otp(request):
 def admin(request):
     if 'user' in request.session:
         students = Booking.objects.all()
-        return render(request, 'main/admin.html', {'students': students})
+        return render(request, 'main/Admin.html', {'students': students})
         
         #admin portal
     
