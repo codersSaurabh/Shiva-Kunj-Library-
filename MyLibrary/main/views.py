@@ -224,5 +224,5 @@ def admin_search(request):
 
 
 
-    return render(request, 'main/admin.html', {'students': students})
+    return render(request, 'main/Admin.html', {'students': students})
 
