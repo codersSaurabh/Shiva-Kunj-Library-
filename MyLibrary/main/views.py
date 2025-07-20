@@ -26,7 +26,7 @@ def send_msg_to_mobile(email,msg):
         server.login('njneha.1590@gmail.com' , 'pzoz ulqp fujw lsop')
         server.sendmail("njneha.1590@gmail.com",email,msg)
     except Exception as e:
-        return HttpResponse("Email is not valid")
+        return HttpResponse("Email is not valid!")
 
     
 #send otp
