@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -74,12 +77,10 @@ WSGI_APPLICATION = 'MyLibrary.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(
+        'postgresql://postgres:Divya@290@db.cknaoqczaanwoiszgxpm.supabase.co:5432/postgres'
+    )
 }
 
 
@@ -129,7 +130,7 @@ STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # RAZORPAY_KEY_ID = 'your_key'
 # RAZORPAY_KEY_SECRET = 'your_secret'
-TIME_ZONE = 'Asia/Kolkata'     # 👈 For Indian Standard Time (IST)
+TIME_ZONE = 'Asia/Kolkata'     
 USE_TZ = True     
 CSRF_TRUSTED_ORIGINS = [
     "https://shiva-kunj-library.onrender.com"
@@ -137,7 +138,3 @@ CSRF_TRUSTED_ORIGINS = [
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
-<<<<<<< HEAD
-
-=======
->>>>>>> aba9be8 (Added Superbase Info)
