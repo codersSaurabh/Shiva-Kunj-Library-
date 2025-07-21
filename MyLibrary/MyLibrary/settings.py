@@ -137,4 +137,7 @@ CSRF_TRUSTED_ORIGINS = [
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> aba9be8 (Added Superbase Info)
