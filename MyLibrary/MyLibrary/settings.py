@@ -79,7 +79,9 @@ WSGI_APPLICATION = 'MyLibrary.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 DATABASES = {
     'default': dj_database_url.parse(
-        'postgresql://postgres:Divya@290@db.cknaoqczaanwoiszgxpm.supabase.co:5432/postgres'
+        'postgresql://postgres:Divya@290@db.cknaoqczaanwoiszgxpm.supabase.co:5432/postgres',
+         conn_max_age=600,
+         ssl_require=True
     )
 }
 
