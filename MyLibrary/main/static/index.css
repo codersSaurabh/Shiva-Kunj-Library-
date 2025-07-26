@@ -114,7 +114,32 @@ body {
       margin-bottom: 0;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
     }
-    
+    .wave-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    .wave-text span {
+      display: inline-block;
+      animation: wave 2s infinite ease-in-out, colorchange 3s infinite linear;
+      animation-delay: calc(0.1s * var(--i));
+    }
+
+   
+
+    @keyframes colorchange {
+      0%   { color: red; }
+      20%  { color: orange; }
+      40%  { color: yellow; }
+      60%  { color: green; }
+      80%  { color: blue; }
+      100% { color: violet; }
+    }
 
     #features {
       padding: 50px 20px;
