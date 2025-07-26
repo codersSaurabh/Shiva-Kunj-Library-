@@ -78,10 +78,13 @@ WSGI_APPLICATION = 'MyLibrary.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 DATABASES = {
-    'default': dj_database_url.parse(
-        'postgresql://postgres:Divya@290@db.cknaoqczaanwoiszgxpm.supabase.co:5432/postgres'
+    'default': dj_database_url.config(
+        default='postgresql://neondb_owner:npg_tBsIj7LC4NYp@ep-winter-sea-a1t0th3q-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require',
+        conn_max_age=600,
+        ssl_require=True
     )
 }
+
 
 
 # Password validation
