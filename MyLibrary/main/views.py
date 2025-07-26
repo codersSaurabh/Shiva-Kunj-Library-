@@ -45,7 +45,7 @@ def send_otp(request):
         request.session['verified_email'] = email
 
         otp = str(random.randint(100000, 999999))
-        msg="Dear candidate your one time password for email verification is "+otp+".\n\nShiva Kunj Library"
+        msg="Dear candidate your one time password for email verification is "+otp+"||.\n\nShiva Kunj Library"
         send_msg_to_mobile(email,msg)
         otp_store[email] = {
             'otp': otp,
