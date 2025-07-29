@@ -135,9 +135,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # RAZORPAY_KEY_SECRET = 'your_secret'
 TIME_ZONE = 'Asia/Kolkata'     
 USE_TZ = True     
-CSRF_TRUSTED_ORIGINS = [
-    "https://shiva-kunj-library.onrender.com"
-]
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
+CSRF_TRUSTED_ORIGINS = [
+    'https://shivakunjlibrary.in',
+    'https://www.shivakunjlibrary.in',
+    'https://shiva-kunj-library.onrender.com',
+]
 
