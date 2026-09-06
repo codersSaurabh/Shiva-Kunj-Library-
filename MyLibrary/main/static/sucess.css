@@ -4,6 +4,8 @@
       padding: 60px;
       text-align: center;
       animation: popIn 1.2s ease;
+      justify-content: center;
+      align-items: center;
     }
     @keyframes popIn {
       0% { transform: scale(0.8); opacity: 0; }

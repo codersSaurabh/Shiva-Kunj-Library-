@@ -3,6 +3,7 @@
       background: #f4f4f4;
       padding: 40px;
       animation: fadeIn 1s ease-in;
+      justify-content: center;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }

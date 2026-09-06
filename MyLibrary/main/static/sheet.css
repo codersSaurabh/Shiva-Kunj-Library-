@@ -1,4 +1,4 @@
-  
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f8f9fa;
@@ -123,9 +123,11 @@
     }
 
     @media (max-width: 600px) {
-      .sheet-box {
-        font-size: 16px;
-        padding: 15px;
+      .sheet-box a{
+        font-size: 5px;
+        padding: 5px;
+        text-align: left;
+        font-weight: 200;
       }
 
       .legend {
@@ -134,12 +136,14 @@
 
       .legend ul {
         gap: 12px;
+        font-size: 25px;
       }
 
       .legend-box {
         width: 16px;
         height: 16px;
       }
+      
     }
 
     .back-btn {
