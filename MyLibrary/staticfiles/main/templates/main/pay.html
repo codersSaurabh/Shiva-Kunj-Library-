@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment</title>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <link rel="stylesheet" href="/static/pay.css">
+</head>
+<body>
+  <h2>Complete Payment</h2>
+  <form id="payment-form">
+    <button id="pay-btn">Pay ₹100 Now</button>
+  </form>
+  <script>
+    var options = {
+      "key": "{{ key_id }}",
+      "amount": "{{ amount }}",
+      "currency": "INR",
+      "name": "Shiva Kunj Library",
+      "description": "Seat Booking",
+      "order_id": "{{ order_id }}",
+      "handler": function (response){
+          window.location.href = "/payment-success/?payment_id=" + response.razorpay_payment_id;
+      },
+      "prefill": {
+        "name": "{{ name }}",
+        "contact": "{{ mobile }}"
+      },
+      "theme": {
+          "color": "#0077cc"
+      }
+    };
+    var rzp = new Razorpay(options);
+    document.getElementById('pay-btn').onclick = function(e){
+      rzp.open();
+      e.preventDefault();
+    }
+  </script>
+</body>
+</html>

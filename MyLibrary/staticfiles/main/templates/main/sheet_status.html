@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sheet Matrix - Shiva kunj Library</title>
+<link rel="stylesheet" href="/static/sheet.css">
+</head>
+<body>
+
+<h1>Sheet Booking Matrix - Shiva Kunj Library</h1>
+<div class="legend">
+  <h3>Legend</h3>
+  <ul>
+    <li><span class="legend-box vacant"></span> Vacant</li>
+    <li><span class="legend-box morning"></span> Morning Vacant</li>
+    <li><span class="legend-box evening"></span> Evening Vacant</li>
+    <li><span class="legend-box full"></span> Full Day Booked</li>
+  </ul>
+</div>
+<div style="text-align: center; margin-bottom: 20px;">
+  <button onclick="history.back()" class="back-btn">Home</button>
+</div>
+
+<div class="grid-container">
+  {% for row in matrix %}
+    {% if row.morning == 'full' and row.evening == 'full' %}
+      <div class="sheet-box full">Sheet {{ row.sheet_no }}</div>
+    {% elif row.morning == 'vacant' and row.evening == 'full' %}
+      <a href="{% url 'book' %}?sheet_no={{ row.sheet_no }}&shift=morning" class="sheet-box morning">Sheet {{ row.sheet_no }}</a>
+    {% elif row.evening == 'vacant' and row.morning == 'full' %}
+      <a href="{% url 'book' %}?sheet_no={{ row.sheet_no }}&shift=evening" class="sheet-box evening">Sheet {{ row.sheet_no }}</a>
+    {% elif row.morning == 'vacant' and row.evening == 'vacant' %}
+      <a href="{% url 'book' %}?sheet_no={{ row.sheet_no }}&shift=optional" class="sheet-box vacant">Sheet {{ row.sheet_no }}</a>
+    {% else %}
+      <div class="sheet-box full">Sheet {{ row.sheet_no }}</div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<div class="caption">Click on a Sheet No only if one or both shifts are available.</div>
+
+
+
+</body>
+</html>
